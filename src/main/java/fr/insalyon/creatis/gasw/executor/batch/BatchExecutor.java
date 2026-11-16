@@ -71,8 +71,10 @@ public class BatchExecutor implements ExecutorPlugin {
             monitor.stopMonitor(force);
 
             manager.clean();
+            loaded = false;
         } catch (InterruptedException e) {
             log.warn("Hard-kill occured!");
+            loaded = false;
         }
     }
 }
